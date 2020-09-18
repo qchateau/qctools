@@ -2,10 +2,10 @@
 
 #include "no_copy.hpp"
 
-#define DOES_NOT_COMPILE(x) x
+#define DOES_NOT_COMPILE(x)
 
 template <typename... Args>
-using nc_vector = nc::no_copy<std::vector<Args...>>;
+using nc_vector = qc::no_copy<std::vector<Args...>>;
 
 void test_nc()
 {

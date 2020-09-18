@@ -3,7 +3,7 @@
 
 #include <utility>
 
-namespace nc {
+namespace qc {
 
 template <typename T>
 class no_copy : public T {
@@ -28,6 +28,6 @@ private:
     no_copy& operator=(const T&) = delete;
 };
 
-} // namespace nc
+} // namespace qc
 
 #endif // NO_COPY_H
