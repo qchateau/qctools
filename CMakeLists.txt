@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.10.2)
-project(playground)
+project(qctools)
 
 if(NOT EXISTS "${CMAKE_BINARY_DIR}/conan.cmake")
    message(STATUS "Downloading conan.cmake from https://github.com/conan-io/cmake-conan")
@@ -25,6 +25,7 @@ conan_cmake_run(
 find_package(Threads REQUIRED)
 
 add_executable(nc no_copy/main.cpp)
+add_executable(zip zip/main.cpp)
 
 add_executable(tsafe tsafe/tests.cpp)
 target_link_libraries(tsafe CONAN_PKG::catch2 Threads::Threads)
