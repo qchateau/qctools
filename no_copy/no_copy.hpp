@@ -2,8 +2,7 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
-#ifndef NO_COPY_H
-#define NO_COPY_H
+#pragma once
 
 #include <utility>
 
@@ -33,5 +32,3 @@ private:
 };
 
 } // namespace qc
-
-#endif // NO_COPY_H

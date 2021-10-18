@@ -2,8 +2,7 @@
 // License, v. 2.0. If a copy of the MPL was not distributed with this
 // file, You can obtain one at https://mozilla.org/MPL/2.0/.
 
-#ifndef TSAFE_H
-#define TSAFE_H
+#pragma once
 
 #include <condition_variable>
 #include <mutex>
@@ -224,5 +223,3 @@ template <typename T,
 using shared_timed_waitable_tsafe = waitable_tsafe<T, Mutex, Lock, ConstLock, ConditionVariable>;
 
 } // namespace qc
-
-#endif // TSAFE_H
