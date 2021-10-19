@@ -9,17 +9,17 @@
 
 namespace qctools {
 namespace details {
-template <typename...>
+template <bool...>
 struct logic_and;
 
-template <typename B, typename... Bs>
+template <bool B, bool... Bs>
 struct logic_and<B, Bs...> {
-    static constexpr bool value = B::value && logic_and<Bs...>::value;
+    static constexpr bool value = B && logic_and<Bs...>::value;
 };
 
-template <typename B>
+template <bool B>
 struct logic_and<B> {
-    static constexpr bool value = B::value;
+    static constexpr bool value = B;
 };
 
 template <typename T0, typename T1>
@@ -39,7 +39,8 @@ void do_nothing(T&&...){};
 template <typename... C>
 class zip_impl {
     using seq = std::make_index_sequence<sizeof...(C)>;
-    static constexpr bool is_const = logic_and<std::is_const<std::remove_reference_t<C>>...>::value;
+    static constexpr bool is_const =
+        logic_and<std::is_const<std::remove_reference_t<C>>::value...>::value;
 
 public:
     template <typename... Iterators>
