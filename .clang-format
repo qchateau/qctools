@@ -23,7 +23,7 @@ BreakBeforeBraces: Stroustrup
 BreakBeforeTernaryOperators: true
 BreakConstructorInitializersBeforeComma: false
 ColumnLimit: 100
-CommentPragmas: '^ IWYU pragma:'
+CommentPragmas: "^ IWYU pragma:"
 ConstructorInitializerAllOnOneLineOrOnePerLine: true
 ConstructorInitializerIndentWidth: 4
 ContinuationIndentWidth: 4
@@ -31,7 +31,7 @@ Cpp11BracedListStyle: true
 DerivePointerAlignment: false
 DisableFormat: false
 ExperimentalAutoDetectBinPacking: false
-ForEachMacros: [ foreach, Q_FOREACH, BOOST_FOREACH ]
+ForEachMacros: [foreach, Q_FOREACH, BOOST_FOREACH]
 IncludeCategories:
   - Regex: '^(<|")(concepts|cstdlib|csignal|csetjmp|cstdarg|typeinfo|typeindex|type_traits|bitset|functional|utility|ctime|chrono|cstddef|initializer_list|tuple|any|optional|variant|compare|version|new|memory|scoped_allocator|memory_resource|climits|cfloat|cstdint|cinttypes|limits|exception|stdexcept|cassert|system_error|cerrno|contract|cctype|cwctype|cstring|cwchar|cuchar|string|string_view|charconv|array|vector|deque|list|forward_list|set|map|unordered_set|unordered_map|stack|queue|span|iterator|ranges|algorithm|execution|cmath|complex|valarray|random|numeric|ratio|cfenv|bit|iosfwd|ios|istream|ostream|iostream|fstream|sstream|syncstream|strstream|iomanip|streambuf|cstdio|locale|clocale|codecvt|regex|atomic|thread|mutex|shared_mutex|future|condition_variable|filesystem).*'
     Priority: 1
@@ -43,14 +43,14 @@ IncludeCategories:
     Priority: 6
   - Regex: '^(<|")drf_.*'
     Priority: 7
-  - Regex: '.*'
+  - Regex: ".*"
     Priority: 5
 IndentCaseLabels: false
 IndentWidth: 4
 IndentWrappedFunctionNames: false
 KeepEmptyLinesAtTheStartOfBlocks: false
-MacroBlockBegin: ''
-MacroBlockEnd: ''
+MacroBlockBegin: ""
+MacroBlockEnd: ""
 MaxEmptyLinesToKeep: 1
 NamespaceIndentation: None
 PenaltyBreakBeforeFirstCallParameter: 1
@@ -61,7 +61,7 @@ PenaltyExcessCharacter: 1000000
 PenaltyReturnTypeOnItsOwnLine: 10000
 PointerAlignment: Left
 ReflowComments: true
-SortIncludes: true
+SortIncludes: false
 SpaceAfterCStyleCast: false
 SpaceBeforeAssignmentOperators: true
 SpaceBeforeParens: ControlStatements

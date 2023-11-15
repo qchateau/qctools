@@ -1,27 +1,27 @@
 cmake_minimum_required(VERSION 3.10.2)
 project(qctools)
 
+set(CMAKE_CXX_EXTENSIONS OFF)
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+
 if(NOT EXISTS "${CMAKE_BINARY_DIR}/conan.cmake")
    message(STATUS "Downloading conan.cmake from https://github.com/conan-io/cmake-conan")
    file(
-        DOWNLOAD "https://github.com/conan-io/cmake-conan/raw/v0.15/conan.cmake"
+        DOWNLOAD "https://raw.githubusercontent.com/conan-io/cmake-conan/0.18.1/conan.cmake"
         "${CMAKE_BINARY_DIR}/conan.cmake"
         TLS_VERIFY ON
     )
 endif()
 
 include(${CMAKE_BINARY_DIR}/conan.cmake)
-
-set(CMAKE_CXX_STANDARD 14)
-set(CMAKE_CXX_EXTENSIONS OFF)
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-
 conan_cmake_run(
-    BASIC_SETUP
-    CMAKE_TARGETS
     REQUIRES
-        catch2/2.13.1
+        catch2/3.4.0
+        boost/1.83.0
+    BASIC_SETUP CMAKE_TARGETS
+    BUILD missing
 )
+
 find_package(Threads REQUIRED)
 
 add_executable(nc no_copy/main.cpp)

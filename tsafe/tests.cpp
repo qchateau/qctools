@@ -1,10 +1,11 @@
-#define CATCH_CONFIG_MAIN
 #include <future>
 #include <list>
 #include <shared_mutex>
 
+#define CATCH_CONFIG_MAIN
+#include <catch2/catch_all.hpp>
+
 #include "tsafe.hpp"
-#include <catch2/catch.hpp>
 
 using namespace qc;
 
@@ -294,8 +295,14 @@ TEMPLATE_LIST_TEST_CASE("waitable tsafe", "[waitable_tsafe][template]", Waitable
     TestType safe{12};
     const TestType& const_safe{safe};
 
-    SECTION("wait already true") { REQUIRE(done_soon(wait_value(safe, 12))); }
-    SECTION("wait already true") { REQUIRE(done_soon(wait_value(const_safe, 12))); }
+    SECTION("wait already true")
+    {
+        REQUIRE(done_soon(wait_value(safe, 12)));
+    }
+    SECTION("wait already true")
+    {
+        REQUIRE(done_soon(wait_value(const_safe, 12)));
+    }
 
     SECTION("wait and set")
     {
